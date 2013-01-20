@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head><title>FizzBuzz</title></head>
+<body id='container'>
+
+	<script>
+	function fizzBuzz (n) {
+		var result = (
+				n % 15 == 0 ? 'FizzBuzz' :
+				n % 3 == 0 ? 'Fizz' :
+				n % 5 == 0 ? 'Buzz' :
+				n.toString()
+			),
+			conditional = (n < 100 ? fizzBuzz(n+1) : '');
+		
+		return result + '<br/>' + conditional;
+	}
+
+	document.getElementById('container').innerHTML = fizzBuzz(1);
+	</script>
+
+</body>
+</html>
