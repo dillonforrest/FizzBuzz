@@ -11,14 +11,14 @@
 
 		counter || (counter = start);
 		
-		return function () {
+		return (function () {
 			var isFizz = (counter % 3 === 0 ? 'Fizz' : ''),
 				isBuzz = (counter % 5 === 0 ? 'Buzz' : ''),
 				isNum = (isFizz || isBuzz ? '' : counter.toString()),
 				conditional = (counter < max ? fizzBuzz : end);
 
 			return isFizz + isBuzz + isNum + '<br/>' + conditional(counter + 1);
-		}();
+		}());
 	}
 
 	document.getElementById('container').innerHTML = fizzBuzz();
