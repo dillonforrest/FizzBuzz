@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head><title>FizzBuzz</title></head>
+<body id='container'>
+
+	<script>
+	function fizzBuzz (counter) {
+		var max = 100,
+			start = 1,
+			end = function(){return 'end';};
+
+		counter || (counter = start);
+		
+		return function () {
+			var isFizz = (counter % 3 === 0 ? 'Fizz' : ''),
+				isBuzz = (counter % 5 === 0 ? 'Buzz' : ''),
+				integer = (isFizz || isBuzz ? '' : counter.toString()),
+				conditional = (counter < max ? fizzBuzz : end);
+
+			counter++;
+
+			return isFizz + isBuzz + integer + '<br/>' + conditional(counter);
+		}();
+	}
+
+	document.getElementById('container').innerHTML = fizzBuzz();
+	</script>
+
+</body>
+</html>
