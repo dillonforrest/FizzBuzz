@@ -14,12 +14,10 @@
 		return function () {
 			var isFizz = (counter % 3 === 0 ? 'Fizz' : ''),
 				isBuzz = (counter % 5 === 0 ? 'Buzz' : ''),
-				integer = (isFizz || isBuzz ? '' : counter.toString()),
+				isNum = (isFizz || isBuzz ? '' : counter.toString()),
 				conditional = (counter < max ? fizzBuzz : end);
 
-			counter++;
-
-			return isFizz + isBuzz + integer + '<br/>' + conditional(counter);
+			return isFizz + isBuzz + isNum + '<br/>' + conditional(counter + 1);
 		}();
 	}
 
